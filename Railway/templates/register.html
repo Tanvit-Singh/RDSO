@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+<div class="container">
+    
+    <h2 class="text-center">SIGN UP</h2>
+    
+    <div>
+    {% for message in messages%}
+    <h5>{{message}}</h5>
+    {% endfor %}
+    </div>
+    
+    <form method="POST" action="/register">
+      {% csrf_token %} 
+       {% comment %} <div class="mb-3">
+         <label for="name">name</label>
+         <input type="name" class="form-control" id="name" name="name" placeholder="Enter your name">
+       </div>
+
+       <div class="mb-3">
+        <label for="lastname">lastname</label>
+        <input type="lastname" class="form-control" id="lastname" name="lastname" placeholder="last name">
+      </div> {% endcomment %}
+
+      <div class="mb-3">
+        <label for="username">username</label>
+        <input type="username" class="form-control" id="username" name="username" placeholder="Username">
+      </div>
+   
+       <div class="mb-3">
+           <label for="email">Email address</label>
+           <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+         </div>
+   
+         <div class="mb-3">
+           <label for="password">Password</label>
+           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+         </div>
+         
+         <div class="mb-3">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password2" placeholder="Confirm Password">
+          </div>
+       <button class="btn btn-primary" type="submit">Sign Up</button>
+     </form>
+
+
+{% endblock body %}
